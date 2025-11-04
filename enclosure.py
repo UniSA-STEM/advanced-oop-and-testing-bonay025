@@ -19,6 +19,14 @@ class Enclosure:
         self.__animal_species = animal_species
         self.__animals = animals
 
+    def add_animal(self, animal):
+        """Adds an animal to the enclosure."""
+        self.__animals.append(animal)
+
+    def remove_animal(self, animal):
+        """Removes an animal from the enclosure."""
+        self.__animals.remove(animal)
+
     def __str__(self):
         str_animals = ""
         for animal in self.__animals:
