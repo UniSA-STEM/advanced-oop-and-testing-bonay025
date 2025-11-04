@@ -14,6 +14,15 @@ class Animal:
         self.__age = age
         self.__diet = diet
 
+    def make_sound(self):
+        print("Making sound")
+
+    def eat(self, food):
+        print(f"Eating {food}")
+
+    def sleep(self):
+        print("Sleeping")
+
     def __str__(self):
         return (f"---{self.__name}--- \n"
                 f"Age: {self.__age} \n"
