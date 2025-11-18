@@ -1,9 +1,10 @@
 """
-File: filename.py
-Description: A brief description of this Python module.
-Author: Billy Bizilis
-ID: 110100110
-Username: bizvy001
+File: enclosure.py
+Description: This module hold the Enclosure class which represents a
+zoo enclosure.
+Author: Amelia Bond
+ID: 110457542
+Username: bonay025
 This is my own work as defined by the University's Academic Integrity Policy.
 """
 
@@ -22,6 +23,9 @@ class Animal:
 
     def sleep(self):
         print("Sleeping")
+
+    def get_name(self):
+        return self.__name
 
     def __str__(self):
         return (f"---{self.__name}--- \n"
