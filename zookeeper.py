@@ -39,11 +39,12 @@ class Zookeeper(Staff):
         str_animals = ""
         for animal in self.__animals:
             str_animals += f"{animal.get_name()} \n"
-        return (f'Current responsibilities: {self.__duties}\n'
+        return (f'Name: {Staff.get_first_name(self)} {Staff.get_last_name(self)} \n'
+                f'Role: {Staff.get_role(self)} \n'
+                f'Current responsibilities: {self.__duties}\n'
                 f'Enclosure: {enclosure}\n'
                 f'Animals: \n'
                 f'{str_animals}\n')
-
 
 
 
