@@ -31,7 +31,18 @@ class Zookeeper(Staff):
         for animal in list_animals:
             self.__animals.append(animal)
 
-
+    def __str__(self):
+        if self.__enclosure is None:
+            enclosure = ""
+        else:
+            enclosure = self.__enclosure.get_name()
+        str_animals = ""
+        for animal in self.__animals:
+            str_animals += f"{animal.get_name()} \n"
+        return (f'Current responsibilities: {self.__duties}\n'
+                f'Enclosure: {enclosure}\n'
+                f'Animals: \n'
+                f'{str_animals}\n')
 
 
 
