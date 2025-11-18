@@ -15,6 +15,14 @@ class Veterinarian(Staff):
         self.__duties = []
         self.__animals = []
 
+    def add_animal(self, animal):
+        self.__animals.append(animal)
+        self.add_duty()
+
+    def add_duty(self):
+        for animal in self.__animals:
+            self.__duties.append(f"Health checks for {animal.get_name()}")
+
     def __str__(self):
         str_animals = ""
         for animal in self.__animals:
