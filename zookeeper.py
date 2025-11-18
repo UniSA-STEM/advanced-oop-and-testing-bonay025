@@ -7,7 +7,7 @@ ID: 110457542
 Username: bonay025
 This is my own work as defined by the University's Academic Integrity Policy.
 """
-import enclosure
+
 from mammal import Mammal
 from staff import Staff
 from enclosure import Enclosure
@@ -25,11 +25,20 @@ class Zookeeper(Staff):
     def set_enclosure(self, enclosure):
         self.__enclosure = enclosure
         self.add_animal()
+        self.add_cleaning()
+        self.add_feeding()
 
     def add_animal(self):
         list_animals = self.__enclosure.get_animals()
         for animal in list_animals:
             self.__animals.append(animal)
+
+    def add_cleaning(self):
+        self.__duties.append(f"Cleaning {self.__enclosure.get_name()}")
+
+    def add_feeding(self):
+        for animal in self.__animals:
+            self.__duties.append(f"Feeding {animal.get_name()}")
 
     def __str__(self):
         if self.__enclosure is None:
@@ -46,5 +55,17 @@ class Zookeeper(Staff):
                 f'Animals: \n'
                 f'{str_animals}\n')
 
+ben = Zookeeper("Ben", "Smith")
+print(ben)
 
+Nala = Mammal("Nala", "Lion", 4, "Carnivore")
+Leo = Mammal("Leo", "Lion", 4, "Carnivore")
+
+lionEnclosure = Enclosure("Lion Enclosure", 300, "Savannah", "Clean", "Lion")
+lionEnclosure.add_animal(Nala)
+lionEnclosure.add_animal(Leo)
+
+
+ben.set_enclosure(lionEnclosure)
+print(ben)
 
