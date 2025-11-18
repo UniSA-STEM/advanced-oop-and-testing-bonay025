@@ -14,6 +14,7 @@ class Animal:
         self.__species = species
         self.__age = age
         self.__diet = diet
+        self.__health_record = []
 
     def make_sound(self):
         print("Making sound")
@@ -26,6 +27,9 @@ class Animal:
 
     def get_name(self):
         return self.__name
+
+    def add_health_record(self, health_record):
+        self.__health_record.append(health_record)
 
     def __str__(self):
         return (f"---{self.__name}--- \n"
