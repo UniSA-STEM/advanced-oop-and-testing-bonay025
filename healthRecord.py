@@ -9,11 +9,17 @@ This is my own work as defined by the University's Academic Integrity Policy.
 
 class HealthRecord:
     def __init__(self, issue, date, severity_level, treatment_plan, notes):
+        self.__issue = issue
         self.__date = date
         self.__severity_level = severity_level
-        self.__issue = issue
         self.__treatment_plan = treatment_plan
         self.__notes = notes
+
+    def get_issue(self):
+        return self.__issue
+
+    def get_date(self):
+        return self.__date
 
     def __str__(self):
         return (f"---{self.__issue}--- \n"
