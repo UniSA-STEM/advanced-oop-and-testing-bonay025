@@ -40,6 +40,13 @@ class Zookeeper(Staff):
         for animal in self.__animals:
             self.__duties.append(f"Feeding {animal.get_name()}")
 
+    def feed_animals(self):
+        for animal in self.__animals:
+            animal.eat()
+
+    def clean_enclosure(self):
+        self.__enclosure.clean()
+
     def __str__(self):
         if self.__enclosure is None:
             enclosure = ""
@@ -61,11 +68,14 @@ print(ben)
 Nala = Mammal("Nala", "Lion", 4, "Carnivore")
 Leo = Mammal("Leo", "Lion", 4, "Carnivore")
 
-lionEnclosure = Enclosure("Lion Enclosure", 300, "Savannah", "Clean", "Lion")
+lionEnclosure = Enclosure("Lion Enclosure", 300, "Savannah", "Dirty", "Lion")
 lionEnclosure.add_animal(Nala)
 lionEnclosure.add_animal(Leo)
-
+print(lionEnclosure)
 
 ben.set_enclosure(lionEnclosure)
-print(ben)
+
+ben.feed_animals()
+ben.clean_enclosure()
+print(lionEnclosure)
 
