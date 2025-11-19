@@ -32,7 +32,11 @@ class Animal:
         self.__health_record.append(health_record)
 
     def __str__(self):
+        str_health_record = ""
+        for health_record in self.__health_record:
+            str_health_record += f"{health_record.get_issue()} \n"
         return (f"---{self.__name}--- \n"
                 f"Age: {self.__age} \n"
                 f"Species: {self.__species} \n"
-                f"Diet: {self.__diet} \n")
+                f"Diet: {self.__diet} \n"
+                f"Health record: {str_health_record}\n")
