@@ -6,8 +6,10 @@ ID: 110457542
 Username: bonay025
 This is my own work as defined by the University's Academic Integrity Policy.
 """
+from animal import Animal
 from mammal import Mammal
 from staff import Staff
+from healthRecord import HealthRecord
 
 class Veterinarian(Staff):
     def __init__(self, first_name, last_name, role="Vetinarian"):
@@ -23,6 +25,9 @@ class Veterinarian(Staff):
         for animal in self.__animals:
             self.__duties.append(f"Health checks for {animal.get_name()}")
 
+    def create_health_record(self, health_record, animal):
+        animal.add_health_record(health_record)
+
     def __str__(self):
         str_animals = ""
         for animal in self.__animals:
@@ -32,3 +37,4 @@ class Veterinarian(Staff):
                 f'Current responsibilities: {self.__duties}\n'
                 f'Animals: \n'
                 f'{str_animals}\n')
+
