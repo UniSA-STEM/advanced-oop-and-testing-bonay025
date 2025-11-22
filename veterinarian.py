@@ -27,6 +27,11 @@ class Veterinarian(Staff):
 
     def create_health_record(self, health_record, animal):
         animal.add_health_record(health_record)
+        print(f"Health record added for {animal.get_name()} by {Staff.get_first_name(self)}.\n")
+
+    def update_health_status(self, animal, status):
+        animal.set_health_status(status)
+        print(f"Health status updated for {animal.get_name()} by {Staff.get_first_name(self)}.\n")
 
     def __str__(self):
         str_animals = ""
