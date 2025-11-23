@@ -1,7 +1,6 @@
 """
 File: enclosure.py
-Description: This module hold the Enclosure class which represents a
-zoo enclosure.
+Description: This module hold the Animal class which represents an animal.
 Author: Amelia Bond
 ID: 110457542
 Username: bonay025
@@ -52,7 +51,7 @@ class Animal:
         str_health_record = ""
         for health_record in self.__health_record:
             str_health_record += f"{health_record.get_issue()} \n"
-        return (f"---{self.__name}--- \n"
+        return (f"--{self.__name}-- \n"
                 f"Age: {self.__age} \n"
                 f"Species: {self.__species} \n"
                 f"Diet: {self.__diet} \n"
