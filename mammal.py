@@ -10,7 +10,7 @@ from animal import Animal
 
 class Mammal(Animal):
     """This class represents a mammal subclass from the animal class."""
-    def __init__(self, name, species, age, diet, producing_milk=False):
-        Animal.__init__(self, name, species, age, diet)
+    def __init__(self, name, species, age, diet, environment_needs, producing_milk=False):
+        Animal.__init__(self, name, species, age, diet, environment_needs)
         self.__producing_milk = producing_milk
 
