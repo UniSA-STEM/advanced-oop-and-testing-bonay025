@@ -24,6 +24,9 @@ class Animal:
     def set_health_status(self, status:str):
         self.__health_status = status
 
+    def get_health_status(self):
+        return self.__health_status
+
     def get_species(self):
         return self.__species
 
