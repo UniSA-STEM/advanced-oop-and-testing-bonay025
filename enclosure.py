@@ -12,7 +12,7 @@ from animal import Animal
 class Enclosure:
     """This class represents a zoo enclosure."""
     def __init__(self, name, size, environmental_type, animal_species, cleanliness_level="Clean"):
-        self.name = name
+        self.__name = name
         self.__size = size
         self.__environmental_type = environmental_type
         self.__cleanliness_level = cleanliness_level
