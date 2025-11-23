@@ -36,3 +36,21 @@ enclosure4 = Enclosure("Enclosure4",100, "Aquatic", "Otter")
 enclosure5 = Enclosure("Enclosure5",100, "Aquatic", "Little Penguin")
 enclosure6 = Enclosure("Enclosure6",100, "Aquatic", "Aldabra Tortoise")
 
+# Add animals to enclosures
+enclosure1.add_animal(Nala)
+# Shows trying to add a different species to an enclosure
+enclosure1.add_animal(Draco)
+# Shows trying to add a species with different environmental needs
+enclosure1.add_animal(Brandy)
+enclosure1.add_animal(Leo)
+enclosure2.add_animal(Ollie)
+enclosure2.add_animal(Pascal)
+enclosure3.add_animal(Draco)
+enclosure3.add_animal(Lizzie)
+enclosure4.add_animal(Apollo)
+enclosure4.add_animal(Brandy)
+enclosure5.add_animal(Pebbles)
+enclosure5.add_animal(Snowflake)
+enclosure6.add_animal(Donna)
+enclosure6.add_animal(Melvin)
+
