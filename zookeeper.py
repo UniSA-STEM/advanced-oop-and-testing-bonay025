@@ -11,6 +11,7 @@ This is my own work as defined by the University's Academic Integrity Policy.
 from mammal import Mammal
 from staff import Staff
 from enclosure import Enclosure
+from task import Task
 
 class Zookeeper(Staff):
     def __init__(self, first_name, last_name, role="Zookeeper"):
@@ -19,26 +20,17 @@ class Zookeeper(Staff):
         self.__enclosure = None
         self.__animals = []
 
-    def add_duty(self, duty):
-        Staff.add_duty(self, duty)
-
     def set_enclosure(self, enclosure):
         self.__enclosure = enclosure
         self.add_animal()
-        self.add_cleaning()
-        self.add_feeding()
 
     def add_animal(self):
         list_animals = self.__enclosure.get_animals()
         for animal in list_animals:
             self.__animals.append(animal)
 
-    def add_cleaning(self):
-        self.__duties.append(f"Cleaning {self.__enclosure.get_name()}")
-
-    def add_feeding(self):
-        for animal in self.__animals:
-            self.__duties.append(f"Feeding {animal.get_name()}")
+    def add_duty(self, duty):
+        self.__duties.append(duty)
 
     def feed_animals(self):
         for animal in self.__animals:
@@ -54,10 +46,14 @@ class Zookeeper(Staff):
             enclosure = self.__enclosure.get_name()
         str_animals = ""
         for animal in self.__animals:
-            str_animals += f"{animal.get_name()} \n"
+            str_animals += f"- {animal.get_name()} \n"
+        str_duties = ""
+        for task in self.__duties:
+            str_duties += f"{task}\n"
         return (f'Name: {Staff.get_first_name(self)} {Staff.get_last_name(self)} \n'
                 f'Role: {Staff.get_role(self)} \n'
-                f'Current responsibilities: {self.__duties}\n'
+                f'Current responsibilities: \n'
+                f'{str_duties}'
                 f'Enclosure: {enclosure}\n'
                 f'Animals: \n'
                 f'{str_animals}\n')
@@ -65,17 +61,17 @@ class Zookeeper(Staff):
 ben = Zookeeper("Ben", "Smith")
 print(ben)
 
-Nala = Mammal("Nala", "Lion", 4, "Carnivore")
-Leo = Mammal("Leo", "Lion", 4, "Carnivore")
+Nala = Mammal("Nala", "Lion", 4, "Carnivore", "Savannah")
+Leo = Mammal("Leo", "Lion", 4, "Carnivore", "Savannah")
 
-lionEnclosure = Enclosure("Lion Enclosure", 300, "Savannah", "Dirty", "Lion")
+lionEnclosure = Enclosure("Lion Enclosure", 300, "Savannah", "Lion", "Dirty")
 lionEnclosure.add_animal(Nala)
 lionEnclosure.add_animal(Leo)
-print(lionEnclosure)
+
 
 ben.set_enclosure(lionEnclosure)
+ben.add_duty(Task("Feed Nala", "9am", "Daily"))
+ben.add_duty(Task("Clean enclosure", "4pm Tuesday", "Weekly"))
 
-ben.feed_animals()
-ben.clean_enclosure()
-print(lionEnclosure)
+print(ben)
 
