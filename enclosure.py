@@ -11,13 +11,12 @@ from animal import Animal
 
 class Enclosure:
     """This class represents a zoo enclosure."""
-    def __init__(self, name, size, environmental_type, cleanliness_level,
-                 animal_species, animals=[]):
+    def __init__(self, name, size, environmental_type, cleanliness_level="Clean", animals=[]):
         self.__name = name
         self.__size = size
         self.__environmental_type = environmental_type
         self.__cleanliness_level = cleanliness_level
-        self.__animal_species = animal_species
+        self.__animal_species = None
         self.__animals = animals
 
     def get_name(self):
@@ -28,16 +27,25 @@ class Enclosure:
 
     def add_animal(self, animal):
         """Adds an animal to the enclosure."""
-        self.__animals.append(animal)
+        if animal.get_environment_needs() != self.__environmental_type:
+            print(f"This enclosure does not have the right environment needs for {animal.get_name()}")
+        elif animal.get_species() != self.__animal_species:
+            print(f"This enclosure is for {self.__animal_species}s, {animal.get_name()} is a {animal.get_species()}.")
+        else:
+            self.__animals.append(animal)
+            self.__animal_species = animal.get_species()
 
     def remove_animal(self, animal):
         """Removes an animal from the enclosure."""
         self.__animals.remove(animal)
 
+    def clean(self):
+        self.__cleanliness_level = "Clean"
+
     def __str__(self):
         str_animals = ""
         for animal in self.__animals:
-            str_animals += f"{animal.get_name()} \n"
+            str_animals += f"- {animal.get_name()} \n"
         return (f"---{self.__animal_species} Enclosure--- \n"
                 f"Size: {self.__size}m\u00b2\n"
                 f"Environmental Type: {self.__environmental_type} \n"
