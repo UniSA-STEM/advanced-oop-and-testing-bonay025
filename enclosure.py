@@ -37,7 +37,11 @@ class Enclosure:
 
     def remove_animal(self, animal):
         """Removes an animal from the enclosure."""
-        self.__animals.remove(animal)
+        health_status = animal.get_health_status()
+        if health_status == "Under Treatment":
+            print(f"{animal.get_name()} is currently under treatment and cannot be moved.\n")
+        else:
+            self.__animals.remove(animal)
 
     def clean(self):
         self.__cleanliness_level = "Clean"
