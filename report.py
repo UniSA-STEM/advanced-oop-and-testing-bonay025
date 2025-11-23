@@ -11,7 +11,7 @@ from veterinarian import Veterinarian
 from healthRecord import HealthRecord
 from enclosure import Enclosure
 
-class HealthReport:
+class Report:
     def __init__(self, zoo_animals=[], zoo_enclosures=[]):
         self.__zoo_animals = zoo_animals
         self.__zoo_enclosures = zoo_enclosures
@@ -31,7 +31,7 @@ class HealthReport:
                   f"{str_records}\n")
 
     def generate_zoo_health_report(self):
-        print(f"---Health Report for All Animals---")
+        print(f"=== Health Report for All Animals ===")
         for animal in self.__zoo_animals:
             self.generate_animal_health_report(animal)
 
@@ -41,7 +41,7 @@ class HealthReport:
             animal_species[animal.get_species()] = []
         for animal in self.__zoo_animals:
             animal_species[animal.get_species()].append(animal)
-        print(f"---Animals in Zoo---")
+        print(f"=== Animals in Zoo ===")
         str_animals = ""
         for species, animals in animal_species.items():
             str_animals += f"**{species}s** \n"
@@ -50,7 +50,7 @@ class HealthReport:
         print(str_animals)
 
     def generate_enclosure_report(self):
-        print(f"---Enclosure Report for All Animals---")
+        print(f"=== Enclosure Report ===")
         for enclosure in self.__zoo_enclosures:
             print(enclosure)
 
