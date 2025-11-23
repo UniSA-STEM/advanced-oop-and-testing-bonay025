@@ -18,6 +18,9 @@ class Animal:
         self.__health_record = []
         self.__health_status = "Healthy"
 
+    def get_name(self):
+        return self.__name
+
     def get_health_record(self):
         return self.__health_record
 
@@ -33,17 +36,14 @@ class Animal:
     def get_environment_needs(self):
         return self.__environment_needs
 
-    def make_sound(self):
-        print("Making sound")
+    def make_sound(self, sound:str):
+        print(sound)
 
     def eat(self):
-        print(f"{self.__name} is eating food")
+        print(f"{self.__name} is eating food.")
 
     def sleep(self):
         print("Sleeping")
-
-    def get_name(self):
-        return self.__name
 
     def add_health_record(self, health_record):
         self.__health_record.append(health_record)
