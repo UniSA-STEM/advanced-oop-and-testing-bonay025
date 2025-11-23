@@ -9,6 +9,7 @@ This is my own work as defined by the University's Academic Integrity Policy.
 from mammal import Mammal
 from veterinarian import Veterinarian
 from healthRecord import HealthRecord
+from enclosure import Enclosure
 
 class HealthReport:
     def __init__(self, zoo_animals=[], zoo_enclosures=[]):
@@ -48,4 +49,8 @@ class HealthReport:
                 str_animals += f"{animal}\n"
         print(str_animals)
 
+    def generate_enclosure_report(self):
+        print(f"---Enclosure Report for All Animals---")
+        for enclosure in self.__zoo_enclosures:
+            print(enclosure)
 
