@@ -7,3 +7,11 @@ ID: 110457542
 Username: bonay025
 This is my own work as defined by the University's Academic Integrity Policy.
 """
+
+from animal import Animal
+
+class Reptile(Animal):
+    def __init__(self, name, species, age, diet, environment_needs, laid_eggs = False):
+        Animal.__init__(self, name, species, age, diet, environment_needs)
+        self.__laid_eggs = laid_eggs
+
