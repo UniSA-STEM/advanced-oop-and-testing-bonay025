@@ -36,13 +36,13 @@ class Animal:
         return self.__environment_needs
 
     def make_sound(self, sound:str):
-        print(sound)
+        print(f"{sound}\n")
 
     def eat(self):
-        print(f"{self.__name} is eating food.")
+        print(f"{self.__name} is eating food.\n")
 
     def sleep(self):
-        print("Sleeping")
+        print(f"{self.__name} is sleeping.\n")
 
     def add_health_record(self, health_record):
         self.__health_record.append(health_record)
