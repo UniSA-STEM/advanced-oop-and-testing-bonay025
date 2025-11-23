@@ -11,13 +11,13 @@ from animal import Animal
 
 class Enclosure:
     """This class represents a zoo enclosure."""
-    def __init__(self, name, size, environmental_type, cleanliness_level="Clean", animals=[]):
-        self.__name = name
+    def __init__(self, name, size, environmental_type, animal_species, cleanliness_level="Clean"):
+        self.name = name
         self.__size = size
         self.__environmental_type = environmental_type
         self.__cleanliness_level = cleanliness_level
-        self.__animal_species = None
-        self.__animals = animals
+        self.__animal_species = animal_species
+        self.__animals = []
 
     def get_name(self):
         return self.__name
@@ -28,9 +28,9 @@ class Enclosure:
     def add_animal(self, animal):
         """Adds an animal to the enclosure."""
         if animal.get_environment_needs() != self.__environmental_type:
-            print(f"This enclosure does not have the right environment needs for {animal.get_name()}")
+            print(f"This enclosure does not have the right environment type for {animal.get_name()}.\n")
         elif animal.get_species() != self.__animal_species:
-            print(f"This enclosure is for {self.__animal_species}s, {animal.get_name()} is a {animal.get_species()}.")
+            print(f"This enclosure is for {self.__animal_species}s, {animal.get_name()} is a {animal.get_species()}.\n")
         else:
             self.__animals.append(animal)
             self.__animal_species = animal.get_species()
