@@ -28,3 +28,11 @@ Lizzie = Reptile("Lizzie", "Komodo Dragon", 17, "Carnivore", "Savannah")
 
 print(Nala)
 
+# Creates six enclosures, one for each species
+enclosure1 = Enclosure("Enclosure1",100, "Savannah", "Lion")
+enclosure2 = Enclosure("Enclosure2",100, "Savannah", "Barking Owl")
+enclosure3 = Enclosure("Enclosure3",100, "Savannah", "Komodo Dragon")
+enclosure4 = Enclosure("Enclosure4",100, "Aquatic", "Otter")
+enclosure5 = Enclosure("Enclosure5",100, "Aquatic", "Little Penguin")
+enclosure6 = Enclosure("Enclosure6",100, "Aquatic", "Aldabra Tortoise")
+
