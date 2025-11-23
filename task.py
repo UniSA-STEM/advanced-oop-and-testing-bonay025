@@ -15,6 +15,6 @@ class Task:
         self.__frequency = frequency
 
     def __str__(self):
-        return (f"Task: {self.__name} \n"
+        return (f"Duty: {self.__name} \n"
                 f"Time: {self.__time} \n"
                 f"Frequency: {self.__frequency} \n")
