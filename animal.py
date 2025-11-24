@@ -8,7 +8,9 @@ This is my own work as defined by the University's Academic Integrity Policy.
 """
 
 class Animal:
-    def __init__(self, name:str, species:str, age:int, diet:str, environment_needs):
+    """This class represents an animal."""
+    def __init__(self, name:str, species:str, age:int, diet:str,
+                 environment_needs):
         self.__name = name
         self.__species = species
         self.__age = age
@@ -36,15 +38,19 @@ class Animal:
         return self.__environment_needs
 
     def make_sound(self, sound:str):
+        """This method makes the animal make a sound."""
         print(f"{sound}\n")
 
     def eat(self):
+        """This method makes the animal eat."""
         print(f"{self.__name} is eating food.\n")
 
     def sleep(self):
+        """This method makes the animal sleep."""
         print(f"{self.__name} is sleeping.\n")
 
     def add_health_record(self, health_record):
+        """This method adds a health record to the animal history."""
         self.__health_record.append(health_record)
 
     def __str__(self):
