@@ -18,32 +18,52 @@ from task import Task
 
 
 # Creates two animals of each species
-Nala = Mammal("Nala", "Lion", 4, "Carnivore", "Savannah")
-Leo = Mammal("Leo", "Lion", 4, "Carnivore", "Savannah")
-Apollo = Mammal("Apollo", "Otter", 7, "Omnivore", "Aquatic")
-Brandy = Mammal("Brandy", "Otter", 10, "Omnivore", "Aquatic")
-Pebbles = Bird("Pebbles", "Little Penguin", 3, "Seafood", "Aquatic", 20)
-Snowflake = Bird("Snowflake", "Little Penguin", 3, "Seafood", "Aquatic", 18)
-Ollie = Bird("Ollie", "Barking Owl", 11, "Carnivore", "Savannah", 88)
-Pascal = Bird("Pascal", "Barking Owl", 15, "Carnivore", "Savannah", 95)
-Donna = Reptile("Donna", "Aldabra Tortoise", 70, "Herbivore", "Aquatic")
-Melvin = Reptile("Melvin", "Aldabra Tortoise", 111, "Herbivore", "Aquatic")
-Draco = Reptile("Draco", "Komodo Dragon", 22, "Carnivore", "Savannah")
-Lizzie = Reptile("Lizzie", "Komodo Dragon", 17, "Carnivore", "Savannah")
+Nala = Mammal("Nala", "Lion", 4, "Carnivore",
+              "Savannah")
+Leo = Mammal("Leo", "Lion", 4, "Carnivore",
+             "Savannah")
+Apollo = Mammal("Apollo", "Otter", 7, "Omnivore",
+                "Aquatic")
+Brandy = Mammal("Brandy", "Otter", 10, "Omnivore",
+                "Aquatic")
+Pebbles = Bird("Pebbles", "Little Penguin", 3, "Seafood",
+               "Aquatic", 20)
+Snowflake = Bird("Snowflake", "Little Penguin", 3, "Seafood",
+                 "Aquatic", 18)
+Ollie = Bird("Ollie", "Barking Owl", 11, "Carnivore",
+             "Savannah", 88)
+Pascal = Bird("Pascal", "Barking Owl", 15, "Carnivore",
+              "Savannah", 95)
+Donna = Reptile("Donna", "Aldabra Tortoise", 70, "Herbivore",
+                "Aquatic")
+Melvin = Reptile("Melvin", "Aldabra Tortoise", 111, "Herbivore",
+                 "Aquatic")
+Draco = Reptile("Draco", "Komodo Dragon", 22, "Carnivore",
+                "Savannah")
+Lizzie = Reptile("Lizzie", "Komodo Dragon", 17, "Carnivore",
+                 "Savannah")
 
 # Create list for zoo animals
-zoo_animals = [Nala, Leo, Apollo, Brandy, Pebbles, Snowflake, Ollie, Pascal, Donna, Melvin, Draco, Lizzie]
+zoo_animals = [Nala, Leo, Apollo, Brandy, Pebbles, Snowflake, Ollie, Pascal,
+               Donna, Melvin, Draco, Lizzie]
 
 # Creates six enclosures, one for each species
-enclosure1 = Enclosure("Enclosure1",100, "Savannah", "Lion")
-enclosure2 = Enclosure("Enclosure2",100, "Savannah", "Barking Owl")
-enclosure3 = Enclosure("Enclosure3",100, "Savannah", "Komodo Dragon")
-enclosure4 = Enclosure("Enclosure4",100, "Aquatic", "Otter")
-enclosure5 = Enclosure("Enclosure5",100, "Aquatic", "Little Penguin")
-enclosure6 = Enclosure("Enclosure6",100, "Aquatic", "Aldabra Tortoise")
+enclosure1 = Enclosure("Enclosure1",100, "Savannah",
+                       "Lion", "Dirty")
+enclosure2 = Enclosure("Enclosure2",100, "Savannah",
+                       "Barking Owl")
+enclosure3 = Enclosure("Enclosure3",100, "Savannah",
+                       "Komodo Dragon")
+enclosure4 = Enclosure("Enclosure4",100, "Aquatic",
+                       "Otter")
+enclosure5 = Enclosure("Enclosure5",100, "Aquatic",
+                       "Little Penguin")
+enclosure6 = Enclosure("Enclosure6",100, "Aquatic",
+                       "Aldabra Tortoise")
 
 # Creates list for zoo enclosures
-zoo_enclosures = [enclosure1, enclosure2, enclosure3, enclosure4, enclosure5, enclosure6]
+zoo_enclosures = [enclosure1, enclosure2, enclosure3, enclosure4,
+                  enclosure5, enclosure6]
 
 # Add animals to enclosures
 enclosure1.add_animal(Nala)
@@ -92,7 +112,8 @@ jane.add_animal(Brandy)
 #Create a health record and update health status
 jane.create_health_record(HealthRecord("Broken Leg", "10/08/25",
                                        "Serious",
-                                       "Place in cast", "Monitor weekly"), Apollo)
+                                       "Place in cast",
+                                       "Monitor weekly"), Apollo)
 jane.update_health_status(Apollo, "Under Treatment")
 
 # Generates reports for one and all animals
@@ -102,7 +123,13 @@ report.generate_zoo_health_report()
 # Trying to remove an animal under treatment from an enclosure
 enclosure4.remove_animal(Apollo)
 
+# Remove an animal from the zoo
 zoo_animals.remove(Donna)
 
+# Generate new report
 report.generate_animal_report()
 
+# Demonstrates clean of an enclosure
+print(enclosure1)
+ben.clean_enclosure()
+print(enclosure1)
