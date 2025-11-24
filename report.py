@@ -22,14 +22,14 @@ class Report:
         if not list_records:
             print(f"**{animal.get_name()}**\n"
                   f"Status: {animal.get_health_status()}\n"
-                  f"No current history.")
+                  f"No current history.\n")
         else:
             str_records = ""
             for record in list_records:
                 str_records += f"{record.get_issue()} {record.get_date()} \n"
             print(f"**{animal.get_name()}**\n"
                   f"Status: {animal.get_health_status()}\n"
-                  f"{str_records}\n")
+                  f"{str_records}")
 
     def generate_zoo_health_report(self):
         print(f"=== Health Report for All Animals ===")
