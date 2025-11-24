@@ -7,11 +7,12 @@ ID: 110457542
 Username: bonay025
 This is my own work as defined by the University's Academic Integrity Policy.
 """
-from animal import Animal
+
 
 class Enclosure:
     """This class represents a zoo enclosure."""
-    def __init__(self, name, size, environmental_type, animal_species, cleanliness_level="Clean"):
+    def __init__(self, name, size, environmental_type, animal_species,
+                 cleanliness_level="Clean"):
         self.__name = name
         self.__size = size
         self.__environmental_type = environmental_type
@@ -29,13 +30,16 @@ class Enclosure:
         """Adds an animal to the enclosure."""
         health_status = animal.get_health_status()
         if health_status == "Under Treatment":
-            print(f"{animal.get_name()} is currently under treatment and cannot be moved.\n")
+            print(f"{animal.get_name()} is currently under treatment"
+                  f" and cannot be moved.\n")
         else:
             if animal.get_environment_needs() != self.__environmental_type:
-                print(f"This enclosure does not have the right environment type for {animal.get_name()}.\n")
+                print(f"This enclosure does not have the right "
+                      f"environment type for {animal.get_name()}.\n")
             elif animal.get_species() != self.__animal_species:
                 print(
-                    f"This enclosure is for {self.__animal_species}s, {animal.get_name()} is a {animal.get_species()}.\n")
+                    f"This enclosure is for {self.__animal_species}s, "
+                    f"{animal.get_name()} is a {animal.get_species()}.\n")
             else:
                 self.__animals.append(animal)
                 self.__animal_species = animal.get_species()
@@ -45,11 +49,13 @@ class Enclosure:
         """Removes an animal from the enclosure."""
         health_status = animal.get_health_status()
         if health_status == "Under Treatment":
-            print(f"{animal.get_name()} is currently under treatment and cannot be moved.\n")
+            print(f"{animal.get_name()} is currently under treatment"
+                  f" and cannot be moved.\n")
         else:
             self.__animals.remove(animal)
 
     def clean(self):
+        """Cleans the enclosure."""
         self.__cleanliness_level = "Clean"
 
     def __str__(self):

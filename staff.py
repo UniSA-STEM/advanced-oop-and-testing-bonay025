@@ -1,14 +1,17 @@
 """
 File: enclosure.py
-Description: This module hold the Enclosure class which represents a
-zoo enclosure.
+Description: This module holds a Staff class which represents zoo
+staff members.
+Author: Amelia Bond
 Author: Amelia Bond
 ID: 110457542
 Username: bonay025
 This is my own work as defined by the University's Academic Integrity Policy.
 """
 
+
 class Staff:
+    """This class represents a zoo staff member."""
     def __init__(self, first_name, last_name, role):
         self.__first_name = first_name
         self.__last_name = last_name

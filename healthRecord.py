@@ -7,7 +7,9 @@ Username: bonay025
 This is my own work as defined by the University's Academic Integrity Policy.
 """
 
+
 class HealthRecord:
+    """This class represents a health record."""
     def __init__(self, issue, date, severity_level, treatment_plan, notes=None):
         self.__issue = issue
         self.__date = date

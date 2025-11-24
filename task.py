@@ -9,6 +9,7 @@ This is my own work as defined by the University's Academic Integrity Policy.
 
 
 class Task:
+    """This class represents a task completed by staff."""
     def __init__(self, name, time, frequency):
         self.__name = name
         self.__time = time
