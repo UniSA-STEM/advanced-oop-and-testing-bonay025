@@ -58,20 +58,3 @@ class Zookeeper(Staff):
                 f'Animals: \n'
                 f'{str_animals}\n')
 
-ben = Zookeeper("Ben", "Smith")
-print(ben)
-
-Nala = Mammal("Nala", "Lion", 4, "Carnivore", "Savannah")
-Leo = Mammal("Leo", "Lion", 4, "Carnivore", "Savannah")
-
-lionEnclosure = Enclosure("Lion Enclosure", 300, "Savannah", "Lion", "Dirty")
-lionEnclosure.add_animal(Nala)
-lionEnclosure.add_animal(Leo)
-
-
-ben.set_enclosure(lionEnclosure)
-ben.add_duty(Task("Feed Nala", "9am", "Daily"))
-ben.add_duty(Task("Clean enclosure", "4pm Tuesday", "Weekly"))
-
-print(ben)
-

@@ -19,7 +19,6 @@ class Veterinarian(Staff):
 
     def add_animal(self, animal):
         self.__animals.append(animal)
-        self.add_duty()
 
     def add_duty(self, duty):
         self.__duties.append(duty)
@@ -42,7 +41,7 @@ class Veterinarian(Staff):
         return (f'Name: {Staff.get_first_name(self)} {Staff.get_last_name(self)} \n'
                 f'Role: {Staff.get_role(self)} \n'
                 f'Current responsibilities: \n'
-                f'{self.__duties}'
+                f'{str_duties}'
                 f'Animals: \n'
                 f'{str_animals}\n')
 
