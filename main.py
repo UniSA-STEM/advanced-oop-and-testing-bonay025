@@ -102,4 +102,7 @@ report.generate_zoo_health_report()
 # Trying to remove an animal under treatment from an enclosure
 enclosure4.remove_animal(Apollo)
 
+zoo_animals.remove(Donna)
+
+report.generate_animal_report()
 
