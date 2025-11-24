@@ -1,7 +1,6 @@
 """
 File: enclosure.py
-Description: This module hold the Enclosure class which represents a
-zoo enclosure.
+Description: This module holds a demonstration script of the zoo system.
 Author: Amelia Bond
 ID: 110457542
 Username: bonay025
@@ -11,6 +10,10 @@ from mammal import Mammal
 from reptile import Reptile
 from bird import Bird
 from enclosure import Enclosure
+from report import Report
+from veterinarian import Veterinarian
+from zookeeper import Zookeeper
+
 
 # Creates two animals of each species
 Nala = Mammal("Nala", "Lion", 4, "Carnivore", "Savannah")
@@ -26,7 +29,7 @@ Melvin = Reptile("Melvin", "Aldabra Tortoise", 111, "Herbivore", "Aquatic")
 Draco = Reptile("Draco", "Komodo Dragon", 22, "Carnivore", "Savannah")
 Lizzie = Reptile("Lizzie", "Komodo Dragon", 17, "Carnivore", "Savannah")
 
-print(Nala)
+zoo_animals = [Nala, Leo, Apollo, Brandy, Pebbles, Snowflake, Ollie, Pascal, Donna, Melvin, Draco, Lizzie]
 
 # Creates six enclosures, one for each species
 enclosure1 = Enclosure("Enclosure1",100, "Savannah", "Lion")
@@ -35,6 +38,8 @@ enclosure3 = Enclosure("Enclosure3",100, "Savannah", "Komodo Dragon")
 enclosure4 = Enclosure("Enclosure4",100, "Aquatic", "Otter")
 enclosure5 = Enclosure("Enclosure5",100, "Aquatic", "Little Penguin")
 enclosure6 = Enclosure("Enclosure6",100, "Aquatic", "Aldabra Tortoise")
+
+zoo_enclosures = [enclosure1, enclosure2, enclosure3, enclosure4, enclosure5, enclosure6]
 
 # Add animals to enclosures
 enclosure1.add_animal(Nala)
@@ -54,9 +59,14 @@ enclosure5.add_animal(Snowflake)
 enclosure6.add_animal(Donna)
 enclosure6.add_animal(Melvin)
 
-print(enclosure1)
-print(enclosure2)
-print(enclosure3)
-print(enclosure4)
-print(enclosure5)
-print(enclosure6)
+ben = Zookeeper("Ben", "Smith")
+jane = Veterinarian("Jane", "Doe")
+bob = Zookeeper("Bob", "Jones")
+
+zoo_staff = [ben, jane, bob]
+
+report = Report(zoo_animals, zoo_enclosures, zoo_staff)
+
+report.generate_enclosure_report()
+report.generate_animal_report()
+report.generate_staff_report()
