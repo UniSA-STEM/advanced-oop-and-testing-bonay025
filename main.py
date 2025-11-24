@@ -31,6 +31,7 @@ Melvin = Reptile("Melvin", "Aldabra Tortoise", 111, "Herbivore", "Aquatic")
 Draco = Reptile("Draco", "Komodo Dragon", 22, "Carnivore", "Savannah")
 Lizzie = Reptile("Lizzie", "Komodo Dragon", 17, "Carnivore", "Savannah")
 
+# Create list for zoo animals
 zoo_animals = [Nala, Leo, Apollo, Brandy, Pebbles, Snowflake, Ollie, Pascal, Donna, Melvin, Draco, Lizzie]
 
 # Creates six enclosures, one for each species
@@ -41,6 +42,7 @@ enclosure4 = Enclosure("Enclosure4",100, "Aquatic", "Otter")
 enclosure5 = Enclosure("Enclosure5",100, "Aquatic", "Little Penguin")
 enclosure6 = Enclosure("Enclosure6",100, "Aquatic", "Aldabra Tortoise")
 
+# Creates list for zoo enclosures
 zoo_enclosures = [enclosure1, enclosure2, enclosure3, enclosure4, enclosure5, enclosure6]
 
 # Add animals to enclosures
@@ -61,32 +63,43 @@ enclosure5.add_animal(Snowflake)
 enclosure6.add_animal(Donna)
 enclosure6.add_animal(Melvin)
 
+# Create Staff
 ben = Zookeeper("Ben", "Smith")
 jane = Veterinarian("Jane", "Doe")
 bob = Zookeeper("Bob", "Jones")
 
+# Creates list for zoo staff
 zoo_staff = [ben, jane, bob]
 
+# Adds zoo information to report class
 report = Report(zoo_animals, zoo_enclosures, zoo_staff)
 
+# Generates reports for animals, enclosures and staff
 report.generate_enclosure_report()
 report.generate_animal_report()
 report.generate_staff_report()
 
+# Add an enclosure to Ben and add duties
 ben.set_enclosure(enclosure1)
 ben.add_duty(Task("Feed Lions", "9am", "Daily"))
 ben.add_duty(Task("Clean enclosure", "8pm Tuesday", "Weekly"))
 print(ben)
 
+# Assign animals to Jane
 jane.add_animal(Apollo)
 jane.add_animal(Brandy)
 
+#Create a health record and update health status
 jane.create_health_record(HealthRecord("Broken Leg", "10/08/25",
                                        "Serious",
                                        "Place in cast", "Monitor weekly"), Apollo)
 jane.update_health_status(Apollo, "Under Treatment")
-report.generate_animal_health_report(Apollo)
 
+# Generates reports for one and all animals
+report.generate_animal_health_report(Apollo)
+report.generate_zoo_health_report()
+
+# Trying to remove an animal under treatment from an enclosure
 enclosure4.remove_animal(Apollo)
 
 
