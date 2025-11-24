@@ -14,3 +14,7 @@ class Mammal(Animal):
         Animal.__init__(self, name, species, age, diet, environment_needs)
         self.__producing_milk = producing_milk
 
+    def produce_milk(self):
+        self.__producing_milk = True
+        print(f"{self.get_name()} is producing milk.")
+
