@@ -27,13 +27,19 @@ class Enclosure:
 
     def add_animal(self, animal):
         """Adds an animal to the enclosure."""
-        if animal.get_environment_needs() != self.__environmental_type:
-            print(f"This enclosure does not have the right environment type for {animal.get_name()}.\n")
-        elif animal.get_species() != self.__animal_species:
-            print(f"This enclosure is for {self.__animal_species}s, {animal.get_name()} is a {animal.get_species()}.\n")
+        health_status = animal.get_health_status()
+        if health_status == "Under Treatment":
+            print(f"{animal.get_name()} is currently under treatment and cannot be moved.\n")
         else:
-            self.__animals.append(animal)
-            self.__animal_species = animal.get_species()
+            if animal.get_environment_needs() != self.__environmental_type:
+                print(f"This enclosure does not have the right environment type for {animal.get_name()}.\n")
+            elif animal.get_species() != self.__animal_species:
+                print(
+                    f"This enclosure is for {self.__animal_species}s, {animal.get_name()} is a {animal.get_species()}.\n")
+            else:
+                self.__animals.append(animal)
+                self.__animal_species = animal.get_species()
+
 
     def remove_animal(self, animal):
         """Removes an animal from the enclosure."""
