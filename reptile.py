@@ -15,3 +15,7 @@ class Reptile(Animal):
         Animal.__init__(self, name, species, age, diet, environment_needs)
         self.__laid_eggs = laid_eggs
 
+    def lay_eggs(self):
+        self.__laid_eggs = True
+        print(f"{self.get_name()} has laid eggs")
+
