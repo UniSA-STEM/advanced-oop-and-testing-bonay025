@@ -6,6 +6,7 @@ ID: 110457542
 Username: bonay025
 This is my own work as defined by the University's Academic Integrity Policy.
 """
+from healthRecord import HealthRecord
 from mammal import Mammal
 from reptile import Reptile
 from bird import Bird
@@ -13,6 +14,7 @@ from enclosure import Enclosure
 from report import Report
 from veterinarian import Veterinarian
 from zookeeper import Zookeeper
+from task import Task
 
 
 # Creates two animals of each species
@@ -70,3 +72,21 @@ report = Report(zoo_animals, zoo_enclosures, zoo_staff)
 report.generate_enclosure_report()
 report.generate_animal_report()
 report.generate_staff_report()
+
+ben.set_enclosure(enclosure1)
+ben.add_duty(Task("Feed Lions", "9am", "Daily"))
+ben.add_duty(Task("Clean enclosure", "8pm Tuesday", "Weekly"))
+print(ben)
+
+jane.add_animal(Apollo)
+jane.add_animal(Brandy)
+
+jane.create_health_record(HealthRecord("Broken Leg", "10/08/25",
+                                       "Serious",
+                                       "Place in cast", "Monitor weekly"), Apollo)
+jane.update_health_status(Apollo, "Under Treatment")
+report.generate_animal_health_report(Apollo)
+
+enclosure4.remove_animal(Apollo)
+
+
